@@ -7,12 +7,6 @@ max_range = 4;
 n =1 ;
 while(1)
 root(n) = (min_range+max_range)/2;
-% rfp = (max_range - ((max_range - min_range)/(f(max_range)-f(min_range)))*f(max_range));
-% if f(rbs)<f(rfp)
-%     root(n) = rbs;
-% else
-%     root(n) = rfp;
-% end
 if(f(root(n))<0)
         min_range = root(n);
 end

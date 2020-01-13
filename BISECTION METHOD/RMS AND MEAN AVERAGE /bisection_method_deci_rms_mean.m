@@ -1,10 +1,7 @@
-function [r,soln,n] = bisection_method_deci_rms_mean(eqn,k,deci)
+function [r,soln,n] = bisection_method_deci_rms_mean(eqn,deci)
 f = eqn;
-[min_range,max_range] = range_calc(eqn,k);
+[min_range,max_range] = range_calc(eqn);
 n=1;
-at = -min_range : max_range+1;
-PlotAxisAtOrigin(at,f(at));
-hold on;
 while(1)
     range = [min_range,max_range];
     root(n) = (((min_range^2+max_range^2)/2)^0.5+mean(range))/2;
@@ -19,9 +16,6 @@ while(1)
         break;
     end
     end
-    y = f(root(n));
-    stem(root(n),y);
-    hold on;
     n=n+1;
 end
 r = (root(n-1));

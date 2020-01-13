@@ -1,7 +1,7 @@
 function [r,soln,n] = bisection_method_deci(eqn,itr)
 f = eqn;
 [min_range,max_range] = range_equation(eqn);
-for n = 1:20
+while(1)
     range = [min_range,max_range];
     root(n) = mean(range);
     disp(root(n));
@@ -18,9 +18,9 @@ for n = 1:20
     er(n) = abs((p - q)/p)*100;
     disp('Percentage Error is ');
     disp(er);
-%     if(er<(1/10^(deci-1)))
-%         break;
-%     end
+     if(er<(1/10^(deci-1)))
+         break;
+     end
     end
     n=n+1;
 end

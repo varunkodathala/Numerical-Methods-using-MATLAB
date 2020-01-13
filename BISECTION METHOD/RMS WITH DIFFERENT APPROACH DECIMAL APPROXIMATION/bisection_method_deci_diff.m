@@ -1,6 +1,6 @@
-function [r,soln,n] = bisection_method_deci_diff(eqn,k,deci)
+function [r,soln,n] = bisection_method_deci_diff(eqn,deci)
 f = eqn;
-[min_range,max_range] = range_calc(eqn,k);
+[min_range,max_range] = range_calc(eqn);
 n=1;
 while(1)
     range = [min_range,max_range];

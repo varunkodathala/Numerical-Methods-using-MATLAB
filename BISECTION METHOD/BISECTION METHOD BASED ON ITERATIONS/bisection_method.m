@@ -1,5 +1,5 @@
-function [root,soln] = bisection_method(eqn, itr,k)
-%BISECTION_METHOD 
+function [root,soln] = bisection_method(eqn, itr)
+%BISECTION_METHOD
 %
 %Function used to evaluate root according to bisection method
 %
@@ -9,7 +9,7 @@ function [root,soln] = bisection_method(eqn, itr,k)
 %
 %k can be any value, if unknown set k = 0;
 f = eqn; %assignment of equation to dynamic variable
-[min_range,max_range] = range_calc(eqn,k); %Returns the range of equation
+[min_range,max_range] = range_calc(eqn); %Returns the range of equation
 for i=1:itr %Iterate the loop based on iterations
     range = [min_range,max_range]; % Conversion of scalar to vector
     root = mean(range); % Calculation of average of minimum and maximum value
